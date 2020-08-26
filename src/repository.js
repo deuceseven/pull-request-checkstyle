@@ -36,6 +36,8 @@ module.exports = function() {
         return eventContext.payload.ref.replace('refs/heads/', '');
       case GithubEvents.PULL_REQUEST:
         return eventContext.payload.pull_request.head.ref;
+      case GithubEvents.CREATE_REF:
+        return eventContext.payload.ref;
       default:
         throw new Error(`Invalid event name: ${GITHUB_EVENT_NAME}`);
     }
