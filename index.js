@@ -26,6 +26,7 @@ function main() {
         config: results[2],
       }
       const errorMessages = new StyleChecker(checkStyleData).check()
+      console.log(`checking branch name [${checkStyleData.branchName}]`);
       errorMessages.forEach((errorMessage) => {
         if (errorMessage.length !== 0 && errorMessage.trim() !== '') {
           colors.enable()
